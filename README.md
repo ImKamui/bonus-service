@@ -4,11 +4,11 @@
 В проекте присутствуют комментарии для понимания, где какие методы для чего используются.<br/>
 
 <h1>Example (пошаговая инструкция)</h1>
-1. POST /api/auth/register, JSON - {"username":"yourUser","password":"yourPassword"}
-2. POST /api/auth/login, JSON - {"username":"yourUser","password":"yourPassword"}
-3. Любой запрос*, написанный ниже.
-*В зависимости от роли пользователя (которую можно сменить только в БД, т.к. не было прописано в ТЗ о предусмотрении функции редактирования роли) можно выполнить либо только GET запросы, либо PATCH, POST и GET запросы соответственно.
-
+1. POST /api/auth/register, JSON - {"username":"yourUser","password":"yourPassword"}<br/>
+2. POST /api/auth/login, JSON - {"username":"yourUser","password":"yourPassword"}<br/>
+3. Любой запрос*, написанный ниже.<br/>
+*В зависимости от роли пользователя (которую можно сменить только в БД, т.к. не было прописано в ТЗ о предусмотрении функции редактирования роли) можно выполнить либо только GET запросы, либо PATCH, POST и GET запросы соответственно.<br/>
+<br/>
 <h1>Основные запросы к API</h1><br/>
 <br/>
 <h2>Users</h2><br/>
