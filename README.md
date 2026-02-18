@@ -1,26 +1,26 @@
 # bonus-service
-<h1>База данных</h1>
-Для проекта была выбрана БД PostgreSQL.
-В проекте присутствуют комментарии для понимания, где какие методы для чего используются.
+<h1>База данных</h1><br/>
+Для проекта была выбрана БД PostgreSQL.<br/>
+В проекте присутствуют комментарии для понимания, где какие методы для чего используются.<br/>
 
-<h1>Основные запросы к API</h1>
-
-<h2>Users</h2>
-POST:
-/api/auth/register
-/api/auth/login
-
-GET:
-/api/users - список всех пользователей
-/api/users/{id} - ID пользователя карты
-
-<h2>Cards</h2>
-GET:
-/api/cards - список всех карт
-/api/cards/{cardNum}/get-balance - эндпоинт для получения баланса карты. В этом случае cardNum это номер карты
-/api/cards/{cardNum}/history - история транзакций по карте. cardNum аналогична с get-balance
-
-PATCH:
-/api/cards/up-balance - начислить бонусы на определённую сумму. JSON выглядит вот так: {"cardNum":"123456","amount":100}, где cardNum - номер карты, а amount - сколько начислить бонусов
-/api/cards/down-balance - снять бонусы на определённую сумму. JSON выглядит аналогично.
-/api/cards/refund-bonus - вернуть бонусы в случае возврата товара. Работае аналогично up-balance, но срабатывает только при условии возврата товара
+<h1>Основные запросы к API</h1><br/>
+<br/>
+<h2>Users</h2><br/>
+POST:<br/>
+/api/auth/register - регистрация. JSON выглядит следующим образом: {"usernane":"anyUser","password":"anyPassword"}. Пароли хэшируются для безопасности.<br/>
+/api/auth/login - вход. JSON аналогичный.<br/>
+<br/>
+GET:<br/>
+/api/users - список всех пользователей.<br/>
+/api/users/{id} - ID пользователя карты.<br/>
+<br/>
+<h2>Cards</h2><br/>
+GET:<br/>
+/api/cards - список всех карт.<br/>
+/api/cards/{cardNum}/get-balance - эндпоинт для получения баланса карты. В этом случае cardNum это номер карты.<br/>
+/api/cards/{cardNum}/history - история транзакций по карте. cardNum аналогична с get-balance.<br/>
+<br/>
+PATCH:<br/>
+/api/cards/up-balance - начислить бонусы на определённую сумму. JSON выглядит вот так: {"cardNum":"123456","amount":100}, где cardNum - номер карты, а amount - сколько начислить бонусов<br/>
+/api/cards/down-balance - снять бонусы на определённую сумму. JSON выглядит аналогично.<br/>
+/api/cards/refund-bonus - вернуть бонусы в случае возврата товара. Работае аналогично up-balance, но срабатывает только при условии возврата товара.<br/>
