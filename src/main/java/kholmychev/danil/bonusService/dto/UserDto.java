@@ -6,9 +6,9 @@ import lombok.Value;
 /**
  * DTO for {@link kholmychev.danil.bonusService.models.User}
  */
-@Value
 @Data
 public class UserDto {
     String username;
     String password;
+    String role;
 }

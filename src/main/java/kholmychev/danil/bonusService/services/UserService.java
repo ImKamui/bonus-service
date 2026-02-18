@@ -71,7 +71,7 @@ public class UserService {
     }
     
     @Transactional
-    public void register(String username, String password)
+    public void register(String username, String password, String role)
     {
     		if (userRepository.findByUsername(username).isPresent())
     		{
@@ -80,6 +80,7 @@ public class UserService {
     		User user = new User();
     		user.setUsername(username);
     		user.setPassword(passwordEncoder.encode(password));
+    		user.setUserRole(role);
     		userRepository.save(user);
     }
 

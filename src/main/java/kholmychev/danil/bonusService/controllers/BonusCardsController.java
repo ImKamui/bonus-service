@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,6 +36,7 @@ public class BonusCardsController {
 	
 	
 	// Список всех бонусных карт
+//	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	@GetMapping("/cards")
 	public @ResponseBody List<BonusCards> getAllCards()
 	{
@@ -43,6 +45,7 @@ public class BonusCardsController {
 	
 	
 	// Просмотр баланса на карте
+	//@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	@GetMapping("/cards/get-balance")
 	public @ResponseBody String getBalance(@RequestParam String cardNum)
 	{ 
@@ -50,6 +53,7 @@ public class BonusCardsController {
 	}
 	
 	// Списать бонусы
+	//@PreAuthorize("hasRole('ADMIN')")
 	@PatchMapping("/cards/down-balance")
 	public ResponseEntity<BonusCards> downBalance(@RequestBody UpdateBalanceCardDto card)
 	{
@@ -69,6 +73,7 @@ public class BonusCardsController {
 	
 	
 	// Начислить бонусы
+	//@PreAuthorize("hasRole('ADMIN')")
 	@PatchMapping("/cards/up-balance")
 	public ResponseEntity<BonusCards> upBalance(@RequestBody UpdateBalanceCardDto card)
 	{
@@ -88,6 +93,7 @@ public class BonusCardsController {
 	
 	
 	// Возврат бонусов
+	//@PreAuthorize("hasRole('ADMIN')")
 	@PatchMapping("/cards/refund-bonus")
 	public ResponseEntity<BonusCards> refundBonus(@RequestBody UpdateBalanceCardDto card)
 	{
@@ -107,6 +113,7 @@ public class BonusCardsController {
 	
 	
 	// История операций по номеру карты
+	//@PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
 	@GetMapping("/cards/{cardNum}/history")
 	public ResponseEntity<List<Operation>> getOperationsByCardNum(@PathVariable String cardNum)
 	{
