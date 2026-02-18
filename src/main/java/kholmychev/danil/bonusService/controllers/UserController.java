@@ -89,44 +89,6 @@ public class UserController {
         }
     }
     
-//    @PostMapping("/auth/login")
-//    public ResponseEntity<?> login(@RequestBody UserDto login) {
-//        try {
-//            User user = userService.findOneByUsername(login.getUsername());
-//            if (user == null) {
-//                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-//                    .body("User not found: " + login.getUsername());
-//            }
-//            System.out.println("=== LOGIN DEBUG ===");
-//            System.out.println("Found user: " + user.getUsername());
-//            System.out.println("Password in DB: " + user.getPassword());
-//            System.out.println("Password from request: " + login.getPassword());
-//            System.out.println("Role in DB: " + user.getUserRole());
-//            System.out.println("===================");
-//
-//            authenticationManager.authenticate(
-//                new UsernamePasswordAuthenticationToken(
-//                    login.getUsername(),
-//                    login.getPassword()
-//                )
-//            );
-//
-//            UserDetails userDetails = usersDetailsService.loadUserByUsername(
-//                login.getUsername());
-//            String token = jwtTokenProvider.generateToken(userDetails);
-//
-//            return ResponseEntity.ok(new JwtResponseDto(token));
-//        } catch (Exception e) {
-//            System.out.println("=== AUTH ERROR ===");
-//            System.out.println("Exception: " + e.getClass().getSimpleName());
-//            System.out.println("Message: " + e.getMessage());
-//            e.printStackTrace();
-//            System.out.println("==================");
-//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-//                .body("Invalid credentials: " + e.getMessage());
-//        }
-//    }
-    
     
 }
 
